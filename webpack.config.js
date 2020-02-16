@@ -2,6 +2,7 @@
 // Sin importar si estamos en local o en cloud.
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Creamos un módulo que va exportar cada configuración que va a suceder.
 module.exports = {
@@ -44,5 +45,9 @@ module.exports = {
         filename: './index.html'
       }
     ),
+    new CopyWebpackPlugin([{
+      from : './src/styles/styles.css',
+      to: ''
+    }])
   ]
 }
